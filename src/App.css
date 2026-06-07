@@ -686,3 +686,120 @@ body {
   font-size: 0.85rem;
   text-align: center;
 }
+
+/* ---- Today v2 ---- */
+.balance-main {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+.balance-main span { font-size: 0.9rem; font-weight: 400; color: var(--text2); }
+
+.week-summary-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.week-summary-pill {
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.week-summary-pill.earned { background: rgba(13,148,136,0.1); border: 1px solid rgba(13,148,136,0.2); }
+.week-summary-pill.penalty { background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.2); }
+.wsp-label { font-size: 0.68rem; color: var(--text2); }
+.wsp-val { font-size: 1rem; font-weight: 800; }
+.week-summary-pill.earned .wsp-val { color: #0d9488; }
+.week-summary-pill.penalty .wsp-val { color: #dc2626; }
+
+.week-net { font-size: 0.85rem; font-weight: 700; text-align: center; }
+
+/* ---- Counter red btn ---- */
+.counter-btn.red { border-color: rgba(220,38,38,0.3); color: #dc2626; }
+
+/* ---- Week nav ---- */
+.week-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+}
+.week-nav-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  line-height: 1;
+}
+.week-nav-btn:disabled { opacity: 0.25; cursor: default; }
+.week-nav-label { font-size: 0.9rem; font-weight: 700; }
+
+.week-totals-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.week-total-pill {
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+}
+.week-total-pill.earned { background: rgba(13,148,136,0.1); border: 1px solid rgba(13,148,136,0.2); color: #0d9488; }
+.week-total-pill.penalty { background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.2); color: #dc2626; }
+.week-total-pill strong { font-weight: 800; }
+
+.wdb-earned { font-size: 0.58rem; color: #0d9488; font-weight: 700; }
+.wdb-penalty { font-size: 0.58rem; color: #dc2626; font-weight: 700; }
+.week-day-btn.future { opacity: 0.4; }
+
+/* ---- History filter ---- */
+.history-filter-label { font-size: 0.75rem; color: var(--text2); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.history-filter-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.filter-pill {
+  background: var(--bg2);
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--text2);
+}
+.filter-pill.active { background: rgba(13,148,136,0.1); }
+
+.cal-check { font-size: 0.65rem; color: white; font-weight: 800; }
+
+.cal-legend { display: flex; gap: 1rem; justify-content: center; margin-top: 0.75rem; }
+.legend-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; color: var(--text2); }
+.legend-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+
+/* ---- Ledger week reference ---- */
+.week-reference-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.wrc-title { font-size: 0.72rem; color: var(--text2); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6rem; }
+.wrc-row { display: flex; justify-content: space-between; align-items: center; padding: 0.25rem 0; }
+.wrc-label { font-size: 0.85rem; color: var(--text2); }
+.wrc-val { font-size: 0.95rem; font-weight: 700; }
+.wrc-val.earned { color: #0d9488; }
+.wrc-val.penalty { color: #dc2626; }
+.wrc-divider { height: 1px; background: var(--border); margin: 0.4rem 0; }
