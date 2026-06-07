@@ -368,7 +368,7 @@ function HistoryTab({ habits, historyData }) {
     <div className="history-v2">
       <div className="history-filter-label">Filter by habit:</div>
       <div className="history-filter-pills">
-        {habits.filter(h => h.type !== 'penalty').map(h => {
+        {habits.map(h => {
           const style = CATEGORY_STYLES[h.category] || CATEGORY_STYLES['spiritual']
           const active = selectedHabits.includes(h.id)
           return (
