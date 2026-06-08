@@ -22,17 +22,17 @@ const CATEGORY_OPTIONS = ['spiritual', 'physical', 'outreach', 'highvalue', 'cou
 function getWeekStart(offsetWeeks = 0) {
   const today = new Date()
   const day = today.getDay()
-  const diff = today.getDate() - day + (day === 0 ? -6 : 1)
-  const monday = new Date(today)
-  monday.setDate(diff + offsetWeeks * 7)
-  return monday
+  const diff = today.getDate() - day
+  const sunday = new Date(today)
+  sunday.setDate(diff + offsetWeeks * 7)
+  return sunday
 }
 
 function getWeekDates(offsetWeeks = 0) {
-  const monday = getWeekStart(offsetWeeks)
+  const sunday = getWeekStart(offsetWeeks)
   return Array.from({ length: 7 }, (_, i) => {
-    const d = new Date(monday)
-    d.setDate(monday.getDate() + i)
+    const d = new Date(sunday)
+    d.setDate(sunday.getDate() + i)
     return d.toISOString().split('T')[0]
   })
 }
@@ -279,9 +279,9 @@ function WeeklyTab({ habits, weekData, weekDates, weekOffset, setWeekOffset, cal
   const [selectedDay, setSelectedDay] = useState(TODAY)
   const dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
 
-  const monday = new Date(weekDates[0] + 'T12:00:00')
-  const sunday = new Date(weekDates[6] + 'T12:00:00')
-  const weekLabel = `${monday.toLocaleDateString('en-US',{month:'short',day:'numeric'})} – ${sunday.toLocaleDateString('en-US',{month:'short',day:'numeric'})}`
+  const sunday = new Date(weekDates[0] + 'T12:00:00')
+  const saturday = new Date(weekDates[6] + 'T12:00:00')
+  const weekLabel = `${saturday.toLocaleDateString('en-US',{month:'short',day:'numeric'})} – ${sunday.toLocaleDateString('en-US',{month:'short',day:'numeric'})}`
 
   return (
     <div className="weekly-v2">
