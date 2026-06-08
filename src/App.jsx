@@ -491,6 +491,10 @@ function SettingsTab({ habits, onSave }) {
   const [list, setList] = useState(habits.map(h => ({ ...h })))
   const [saved, setSaved] = useState(false)
 
+  useEffect(() => {
+    setList(habits.map(h => ({ ...h })))
+  }, [habits])
+
   function updateHabit(id, field, value) {
     setList(prev => prev.map(h => h.id === id ? { ...h, [field]: value } : h))
   }
